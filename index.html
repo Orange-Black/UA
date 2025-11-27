@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UA检测</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            margin-top: 20px;
+        }
+        #ua-display {
+            margin: 40px auto;
+            max-width: 800px;
+            word-break: break-all;
+            line-height: 1.5;
+        }
+        .link-button {
+            font-size: 1.5em;
+            text-decoration: underline;
+            color: blue;
+            cursor: pointer;
+            margin-top: 20px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>UA检测</h1>
+    <div id="ua-display"></div>
+    <a class="link-button" id="ua-button">显示UA</a>
+
+    <script>
+        // 页面加载时立即显示UA
+        window.onload = function() {
+            alert(navigator.userAgent);
+            document.getElementById('ua-display').textContent = navigator.userAgent;
+        };
+
+        // 为按钮添加点击事件
+        document.getElementById('ua-button').onclick = function() {
+            alert(navigator.userAgent);
+        };
+    </script>
+</body>
+</html>

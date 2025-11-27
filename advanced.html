@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UA信息查看器</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #00ccff, #0066ff);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        
+        .ua-info {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-family: monospace;
+            word-break: break-all;
+        }
+        
+        .btn {
+            background: #fff;
+            color: #0066ff;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .footer {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>UA信息查看器</h1>
+        <p>本页面将显示您的浏览器User Agent信息</p>
+        
+        <div class="ua-info" id="uaDisplay">
+            <!-- UA信息将在这里显示 -->
+        </div>
+        
+        <p>User Agent是浏览器提供的字符串，用于标识您的浏览器和操作系统信息。</p>
+        
+        <button class="btn" onclick="showUAAlert()">显示UA对话框</button>
+        
+        <div class="footer">
+            <p>刷新页面即可再次查看对话框</p>
+        </div>
+    </div>
+
+    <script>
+        // 页面加载时显示UA对话框
+        window.onload = function() {
+            const ua = navigator.userAgent;
+            alert(ua);
+            
+            // 同时在页面上显示UA信息
+            document.getElementById('uaDisplay').textContent = ua;
+        };
+        
+        // 按钮点击时显示UA对话框
+        function showUAAlert() {
+            const ua = navigator.userAgent;
+            alert(ua);
+        }
+    </script>
+</body>
+</html>
